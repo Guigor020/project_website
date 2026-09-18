@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <link rel="icon" href="logo_apres.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THIAM &amp; FILS — Centre artisanal bois, métal &amp; aluminium à Kaolack</title>
+<meta name="description" content="THIAM &amp; FILS prépare un centre de production et de formation (bois, métal, aluminium) à Kahone, près de Kaolack, porté par l'artisan Abdoulaye Thiam. Découvrez le projet et manifestez votre intérêt.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@500;700;800;900&amp;display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          display: ['Montserrat', 'sans-serif'],
+        },
+        colors: {
+          slate: {
+            850: '#152033',
+            900: '#0F172A',
+          },
+          orange: {
+            500: '#f97316',
+            600: '#ea580c',
+            700: '#c2410c',
+          }
+        },
+        animation: {
+          'marquee': 'marquee 30s linear infinite',
+        },
+        keyframes: {
+          marquee: {
+            '0%': { transform: 'translateX(0%)' },
+            '100%': { transform: 'translateX(-50%)' },
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  /* Scroll Reveal Animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 100ms; }
+  .reveal-delay-2 { transition-delay: 200ms; }
+  .reveal-delay-3 { transition-delay: 300ms; }
+
+  /* Glassmorphism Header */
+  .glass-header {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Custom subtle grid background for Hero */
+  .bg-grid-pattern {
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Form Focus & Input styling */
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-sans focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow duration-200;
+  }
+  
+  /* Hide scrollbar for the scrolling container */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Règle CSS claire pour que les boutons radios "réagissent" au clic */
+  .radio-card:has(input:checked) {
+    border-color: #ea580c !important; /* orange-600 */
+    background-color: #fff7ed !important; /* orange-50 */
+    box-shadow: 0 0 0 1px #ea580c;
+  }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+<header class="fixed top-0 w-full z-50 glass-header transition-all duration-300" id="header">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 text-white no-underline group">
+      <img src="logo_apres.png" alt="Logo THIAM &amp; FILS" class="h-10 w-auto" />
+      <span class="font-display font-bold text-xl tracking-wide">THIAM &amp; FILS</span>
+    </a>
+    
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8" id="desktopNav">
+      <a href="#projet" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Le projet</a>
+      <a href="#ateliers" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Ateliers</a>
+      <a href="#impact" class="text-slate-300 hover:text-white font-medium text-sm transition-colors">Impact</a>
+      <a href="#participer" class="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all transform hover:-translate-y-0.5 shadow-lg shadow-orange-600/30">Manifester mon intérêt</a>
+    </nav>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="md:hidden text-slate-300 hover:text-white focus:outline-none" id="navToggle" aria-label="Ouvrir le menu">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="navIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+  
+  <!-- Mobile Nav Menu -->
+  <div class="md:hidden hidden bg-slate-900 border-t border-slate-800" id="mobileNav">
+    <div class="px-6 py-4 flex flex-col gap-4">
+      <a href="#projet" class="text-slate-300 hover:text-white font-medium py-2 border-b border-slate-800 mobile-link">Le projet</a>
+      <a href="#ateliers" class="text-slate-300 hover:text-white font-medium py-2 border-b border-slate-800 mobile-link">Ateliers</a>
+      <a href="#impact" class="text-slate-300 hover:text-white font-medium py-2 border-b border-slate-800 mobile-link">Impact</a>
+      <a href="#participer" class="text-center bg-orange-600 hover:bg-orange-700 text-white px-5 py-3 rounded-lg font-semibold mt-2 mobile-link">Manifester mon intérêt</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="relative bg-slate-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+    <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-orange-600/20 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-12 justify-between items-center">
+      <div class="flex-1 text-center lg:text-left reveal">
+        
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-display font-black text-white leading-tight uppercase tracking-tight">
+          Du bois, <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">du métal</span>,<br>de l'aluminium.
+          <span class="block text-2xl md:text-3xl lg:text-4xl mt-4 text-slate-300 font-bold">Un atelier pour Kaolack.</span>
+        </h1>
+        
+        <p class="mt-6 text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+          THIAM &amp; FILS prépare un centre de production et de formation à Kahone, porté par l'artisan Abdoulaye Thiam (35 ans de métier) : trois ateliers, une scierie, et un espace pour les jeunes entrepreneurs.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#participer" class="inline-flex justify-center items-center px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-lg transition-transform transform hover:-translate-y-1 shadow-lg shadow-orange-600/30">
+            Je veux participer
+          </a>
+          <a href="#projet" class="inline-flex justify-center items-center px-8 py-4 bg-transparent border-2 border-slate-600 hover:border-slate-400 text-white rounded-lg font-bold text-lg transition-all transform hover:-translate-y-1 hover:bg-slate-800">
+            Voir le projet
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJET -->
+  <section id="projet" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-display font-black text-slate-900 uppercase tracking-tight">Un secteur qui manque d'ateliers modernes</h2>
+        <div class="h-1 w-20 bg-orange-600 mt-6 rounded"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start reveal">
+        <div class="space-y-6">
+          <p class="text-lg text-slate-600 leading-relaxed font-medium">
+            Kaolack se trouve au cœur du bassin agricole et commercial du Sénégal. La ville grandit, les chantiers se multiplient, et la demande en portes, fenêtres, portails, charpentes et mobilier augmente chaque année.
+          </p>
+          <p class="text-slate-600 leading-relaxed text-lg">
+            Mais l'offre locale reste artisanale au sens propre : peu d'équipements industriels, peu de formation technique qualifiée, et une majorité d'ateliers qui travaillent encore dans l'informel. Résultat : des opportunités économiques perdues, et des jeunes qui peinent à accéder à un vrai métier.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-slate-100 reveal reveal-delay-1">
+          <h3 class="font-display font-bold text-2xl text-slate-900 uppercase tracking-wide mb-4">Le projet d'Abdoulaye Thiam</h3>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Après 35 ans dans les métiers du bois, du métal et de l'aluminium, Abdoulaye Thiam porte le projet d'un centre artisanal moderne sur 1 125 m² : trois ateliers de production, une scierie pour transformer le bois sur place, des salles de formation et un espace pour accompagner de jeunes entrepreneurs.
+          </p>
+          <div class="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-r-lg">
+            <p class="text-slate-800 font-semibold text-lg italic">
+              "La production doit financer la formation, et la formation doit nourrir la production en nouveaux talents."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATELIERS -->
+  <section id="ateliers" class="py-24 bg-slate-200 border-y border-slate-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-display font-black text-slate-900 uppercase tracking-tight">Un site, des unités complémentaires</h2>
+        <div class="h-1 w-20 bg-orange-600 mt-6 rounded"></div>
+      </div>
+
+      <!-- Galerie images -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal">
+        <figure class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 m-0">
+          <img src="ex-atelier-bois.jpg" alt="Travail du bois en atelier" class="w-full h-56 object-cover">
+          <figcaption class="px-5 py-4 text-sm font-medium text-slate-700">Le travail du bois en atelier</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 m-0">
+          <img src="ex_atelier_fer.jpeg" alt="Soudure métallique en atelier" class="w-full h-56 object-cover">
+          <figcaption class="px-5 py-4 text-sm font-medium text-slate-700">La soudure métallique</figcaption>
+        </figure>
+        <figure class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 m-0">
+          <img src="formation.jpg" alt="Jeunes en formation dans un atelier" class="w-full h-56 object-cover">
+          <figcaption class="px-5 py-4 text-sm font-medium text-slate-700">Des jeunes en formation</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <h4 class="font-display font-bold text-lg text-slate-900 mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-orange-500"></span> Menuiserie Bois
+          </h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Transformation du bois brut en portes, fenêtres, meubles et charpentes. Les apprentis y apprendront la lecture de plans, la découpe, l'assemblage et la finition.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <h4 class="font-display font-bold text-lg text-slate-900 mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-slate-500"></span> Aluminium
+          </h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Fabrication de fenêtres, portes vitrées, cloisons et façades légères en aluminium, un matériau de plus en plus demandé dans les constructions urbaines récentes.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+          <h4 class="font-display font-bold text-lg text-slate-900 mb-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-slate-800"></span> Métallurgie
+          </h4>
+          <p class="text-slate-600 text-sm leading-relaxed">Création de portails, grilles de sécurité, structures et charpentes. La formation portera sur les techniques de soudure modernes et les normes de sécurité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTIONS : Section défilante (Marquee) -->
+  <section class="py-24 bg-slate-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-12 reveal">
+      <h2 class="text-3xl md:text-4xl font-display font-black text-slate-900 uppercase tracking-tight">Ce que le centre produira</h2>
+      <div class="h-1 w-20 bg-orange-600 mt-6 rounded"></div>
+      <p class="mt-6 text-lg text-slate-600 leading-relaxed max-w-2xl">
+        Une gamme complète de produits et de prestations pour les particuliers, les entreprises et les promoteurs immobiliers.
+      </p>
+    </div>
+
+    <!-- Conteneur Marquee -->
+    <div class="relative flex overflow-x-hidden group reveal">
+      <div class="flex gap-6 w-max animate-marquee hover:[animation-play-state:paused] px-6">
+        <!-- SET 1 -->
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Portes &amp; fenêtres (bois/métal)</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Portails &amp; grilles de sécurité</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Charpentes métalliques</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Mobilier sur mesure</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Façades &amp; cloisons aluminium</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Aménagements extérieurs</span>
+        </div>
+
+        <!-- SET 2 (Clone) -->
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Portes &amp; fenêtres (bois/métal)</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Portails &amp; grilles de sécurité</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Charpentes métalliques</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Mobilier sur mesure</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Façades &amp; cloisons aluminium</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white p-6 rounded-xl border border-slate-200 shadow-sm w-80 flex-shrink-0">
+          <div class="w-3 h-3 rounded-full bg-orange-600"></div>
+          <span class="font-medium text-slate-800">Aménagements extérieurs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section id="impact" class="py-24 bg-slate-900 text-white relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 reveal">
+        <h2 class="text-3xl md:text-4xl font-display font-black uppercase tracking-tight text-white">Former, employer, transformer Kaolack</h2>
+        <div class="h-1 w-20 bg-orange-600 mt-6 rounded"></div>
+        <p class="mt-6 text-lg text-slate-400 leading-relaxed max-w-2xl">
+          Au-delà de la production, le projet veut créer un cycle : former des jeunes, leur donner un vrai métier, et réinvestir une partie des bénéfices dans l'atelier et dans la formation suivante.
+        </p>
+      </div>
+
+      <!-- Grille d'impact avec chiffres animés -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-y border-slate-800 py-12 mb-12 reveal">
+
+        <div class="flex items-center justify-center gap-6">
+          <span class="text-5xl font-black text-orange-500 whitespace-nowrap">
+            <span class="counter" data-target="15">0</span> à
+            <span class="counter" data-target="20">0</span>
+          </span>
+          <h4 class="font-display font-bold text-xl whitespace-nowrap">Emplois directs</h4>
+        </div>
+
+        <div class="flex items-center justify-center gap-6">
+          <span class="text-5xl font-black text-orange-500 whitespace-nowrap">
+            <span class="counter" data-target="30">0</span> à
+            <span class="counter" data-target="50">0</span>
+          </span>
+          <h4 class="font-display font-bold text-xl whitespace-nowrap">Jeunes formés / an</h4>
+        </div>
+
+      </div>
+
+      <div class="max-w-4xl reveal">
+        <p class="text-slate-400 text-lg leading-relaxed italic border-l-4 border-slate-700 pl-6">
+          "Le centre s'adressera aussi bien aux jeunes sans qualification qu'aux femmes intéressées par les métiers techniques ou aux jeunes diplômés en recherche de compétences pratiques. Il s'inscrit dans la vision nationale Sénégal Horizon 2050 et dans une logique d'économie sociale et solidaire."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE -->
+  <section id="participer" class="py-24 bg-slate-200 border-t border-slate-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        
+        <div class="reveal">
+          <h2 class="text-3xl md:text-4xl font-display font-black text-slate-900 uppercase tracking-tight">Comment participer</h2>
+          <div class="h-1 w-20 bg-orange-600 mt-6 rounded"></div>
+          <p class="mt-6 text-lg text-slate-600 leading-relaxed mb-12">
+            Ce projet peut avancer de plusieurs façons. Dites-nous ce qui vous intéresse, et nous reviendrons vers vous.
+          </p>
+          
+          <div class="space-y-8">
+            <div class="flex gap-6 items-start">
+              <span class="font-mono text-sm text-slate-400 font-bold pt-1">01</span>
+              <div>
+                <b class="block text-xl font-display uppercase text-slate-900 mb-2">Investir ou financer</b>
+                <p class="text-slate-600">Participer au financement du projet, seul ou avec d'autres partenaires.</p>
+              </div>
+            </div>
+            <div class="flex gap-6 items-start">
+              <span class="font-mono text-sm text-slate-400 font-bold pt-1">02</span>
+              <div>
+                <b class="block text-xl font-display uppercase text-slate-900 mb-2">Nouer un partenariat</b>
+                <p class="text-slate-600">Mairie, ONG, centre de formation : construire une convention ou un appui institutionnel.</p>
+              </div>
+            </div>
+            <div class="flex gap-6 items-start">
+              <span class="font-mono text-sm text-slate-400 font-bold pt-1">03</span>
+              <div>
+                <b class="block text-xl font-display uppercase text-slate-900 mb-2">Passer commande</b>
+                <p class="text-slate-600">Portes, fenêtres, portails, mobilier sur mesure : demander un devis pour votre projet.</p>
+              </div>
+            </div>
+            <div class="flex gap-6 items-start">
+              <span class="font-mono text-sm text-slate-400 font-bold pt-1">04</span>
+              <div>
+                <b class="block text-xl font-display uppercase text-slate-900 mb-2">Rejoindre la formation</b>
+                <p class="text-slate-600">Jeunes et futurs apprentis : intégrer une des formations du centre.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 md:p-10 rounded-2xl shadow-2xl border border-slate-200 reveal reveal-delay-2">
+          <form id="interestForm" novalidate>
+            <h3 class="font-display font-bold text-2xl uppercase text-slate-900 mb-6">Manifester mon intérêt</h3>
+            <p class="text-red-600 bg-red-50 p-4 rounded-lg text-sm mb-6 font-medium" id="formError" hidden></p>
+            
+            <div class="space-y-5 mb-6">
+              <div>
+                <label for="fName" class="block text-sm font-semibold text-slate-700 mb-2">Nom complet</label>
+                <input type="text" id="fName" name="name" autocomplete="name" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-sans focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow duration-200" required>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label for="fPhone" class="block text-sm font-semibold text-slate-700 mb-2">Téléphone</label>
+                  <input type="tel" id="fPhone" name="phone" autocomplete="tel" placeholder="+221 ..." class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-sans focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow duration-200">
+                </div>
+                <div>
+                  <label for="fEmail" class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                  <input type="email" id="fEmail" name="email" autocomplete="email" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-sans focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow duration-200">
+                </div>
+              </div>
+            </div>
+
+            <fieldset class="mb-8">
+              <legend class="block text-sm font-semibold text-slate-700 mb-4">Je suis intéressé(e) par</legend>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <label class="radio-card flex items-center gap-4 p-4 border-2 border-slate-200 bg-white rounded-xl cursor-pointer transition-all duration-200 hover:border-orange-300">
+                  <input type="radio" name="interest" value="invest" data-label="Investir / financer" class="w-5 h-5 accent-orange-600" required>
+                  <span class="font-medium text-slate-700">Investir / financer</span>
+                </label>
+
+                <label class="radio-card flex items-center gap-4 p-4 border-2 border-slate-200 bg-white rounded-xl cursor-pointer transition-all duration-200 hover:border-orange-300">
+                  <input type="radio" name="interest" value="partner" data-label="Partenariat institutionnel" class="w-5 h-5 accent-orange-600">
+                  <span class="font-medium text-slate-700">Partenariat</span>
+                </label>
+
+                <label class="radio-card flex items-center gap-4 p-4 border-2 border-slate-200 bg-white rounded-xl cursor-pointer transition-all duration-200 hover:border-orange-300">
+                  <input type="radio" name="interest" value="order" data-label="Commande / devis" class="w-5 h-5 accent-orange-600">
+                  <span class="font-medium text-slate-700">Commande / devis</span>
+                </label>
+
+                <label class="radio-card flex items-center gap-4 p-4 border-2 border-slate-200 bg-white rounded-xl cursor-pointer transition-all duration-200 hover:border-orange-300">
+                  <input type="radio" name="interest" value="training" data-label="Formation" class="w-5 h-5 accent-orange-600">
+                  <span class="font-medium text-slate-700">Formation</span>
+                </label>
+
+                <label class="radio-card sm:col-span-2 flex items-center gap-4 p-4 border-2 border-slate-200 bg-white rounded-xl cursor-pointer transition-all duration-200 hover:border-orange-300">
+                  <input type="radio" name="interest" value="other" data-label="Autre" class="w-5 h-5 accent-orange-600">
+                  <span class="font-medium text-slate-700">Autre</span>
+                </label>
+
+              </div>
+            </fieldset>
+
+            <div class="mb-8">
+              <label for="fMessage" class="block text-sm font-semibold text-slate-700 mb-2">Message (optionnel)</label>
+              <textarea id="fMessage" name="message" rows="4" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-sans focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow duration-200 resize-y"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white py-4 rounded-lg font-bold text-lg transition-transform transform hover:-translate-y-1 shadow-lg shadow-orange-600/30">Envoyer ma demande</button>
+            
+            <div class="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-lg">
+              <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                <strong class="text-slate-700">Démo :</strong> les demandes envoyées ici sont enregistrées dans le stockage de cet aperçu. Avant une mise en ligne réelle, on branchera un vrai système (email ou base de données).
+              </p>
+              <button type="button" class="w-full py-2 px-4 border border-slate-300 text-slate-600 text-sm font-medium rounded hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400" id="toggleSubmissions" aria-expanded="false" aria-controls="submissionsPanel">Voir les demandes reçues (démo)</button>
+              <div class="mt-4 pt-4 border-t border-slate-200 hidden" id="submissionsPanel">
+                <div id="submissionsList" class="space-y-3"><p class="text-sm text-slate-500 italic">Chargement…</p></div>
+              </div>
+            </div>
+          </form>
+          
+          <div class="text-center py-12 hidden" id="formSuccess">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <h3 class="font-display font-black text-3xl uppercase text-slate-900 mb-4">Merci !</h3>
+            <p class="text-slate-600 text-lg">Votre demande a bien été enregistrée. Nous vous recontacterons rapidement.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-slate-900 text-slate-400 pt-16 pb-8 border-t-4 border-orange-600">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div>
+        <h4 class="text-white font-display font-bold uppercase mb-4 text-sm tracking-wider">Raison sociale</h4>
+        <p class="text-slate-300">THIAM &amp; FILS</p>
+        <p class="mt-4 text-xs font-mono">NINEA: 221 4055 2M1<br>RC: SNKL.2002.A.463</p>
+      </div>
+      <div>
+        <h4 class="text-white font-display font-bold uppercase mb-4 text-sm tracking-wider">Activités</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Menuiserie bois, métallique, aluminium. Commerce général. Transport logistique.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-display font-bold uppercase mb-4 text-sm tracking-wider">Adresse</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">Kahone, lot n°60, en face de l'aérodrome, Route N1, Kaolack, Sénégal</p>
+      </div>
+      <div>
+        <h4 class="text-white font-display font-bold uppercase mb-4 text-sm tracking-wider">Contact</h4>
+        <p class="text-slate-300 text-sm leading-relaxed">+221 77 657 53 44<br>+221 77 752 30 82<br>tbamba973@gmail.com</p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center border-t border-slate-800 pt-8 text-xs text-slate-500">
+      <p>© 2026 THIAM &amp; FILS. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.storage = window.storage || {
+    set: async function(k, v) { localStorage.setItem(k, v); },
+    get: async function(k) { return { value: localStorage.getItem(k) }; },
+    list: async function(prefix) { 
+      var keys = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key.startsWith(prefix)) keys.push(key);
+      }
+      return { keys: keys }; 
+    }
+  };
+
+  // Menu Mobile Toggle
+  var navToggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  var navIcon = document.getElementById('navIcon');
+  
+  navToggle.addEventListener('click', function(){
+    mobileNav.classList.toggle('hidden');
+    var isExpanded = !mobileNav.classList.contains('hidden');
+    navToggle.setAttribute('aria-expanded', String(isExpanded));
+    if(isExpanded) {
+      navIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); 
+    } else {
+      navIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); 
+    }
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(function(link){
+    link.addEventListener('click', function(){
+      mobileNav.classList.add('hidden');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+
+  // Change Header background on scroll
+  window.addEventListener('scroll', function() {
+    var header = document.getElementById('header');
+    if(window.scrollY > 50) {
+      header.classList.add('shadow-md');
+    } else {
+      header.classList.remove('shadow-md');
+    }
+  });
+
+  // Intersection Observer for Scroll Animations
+  var revealObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+
+  // Animation des compteurs (Numbers Count Up)
+  var counterObserver = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if(entry.isIntersecting) {
+        var target = entry.target;
+        var targetValue = parseInt(target.getAttribute('data-target'));
+        var duration = 1500; // Durée totale de l'animation en millisecondes
+        
+        // Sécurité pour éviter la division par 0
+        if(targetValue === 0) {
+          target.innerText = 0;
+          observer.unobserve(target);
+          return;
+        }
+
+        var stepTime = Math.abs(Math.floor(duration / targetValue));
+        var count = 0;
+        var timer = setInterval(function() {
+          count += 1;
+          target.innerText = count;
+          if (count >= targetValue) {
+            clearInterval(timer);
+            target.innerText = targetValue;
+          }
+        }, stepTime);
+
+        observer.unobserve(target); // L'animation ne se joue qu'une fois
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.counter').forEach(function(el) {
+    counterObserver.observe(el);
+  });
+
+  // Logic form storage
+  var form = document.getElementById('interestForm');
+  var formError = document.getElementById('formError');
+  var formSuccess = document.getElementById('formSuccess');
+  var toggleBtn = document.getElementById('toggleSubmissions');
+  var submissionsPanel = document.getElementById('submissionsPanel');
+  var submissionsList = document.getElementById('submissionsList');
+
+  function escapeHtml(str){
+    var div = document.createElement('div');
+    div.textContent = str == null ? '' : str;
+    return div.innerHTML;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fName').value.trim();
+    var phone = document.getElementById('fPhone').value.trim();
+    var email = document.getElementById('fEmail').value.trim();
+    var interestInput = form.querySelector('input[name="interest"]:checked');
+    var message = document.getElementById('fMessage').value.trim();
+
+    if(!name || (!phone && !email) || !interestInput){
+      formError.hidden = false;
+      formError.textContent = "Merci d'indiquer votre nom, un moyen de contact (téléphone ou email) et votre type d'intérêt.";
+      return;
+    }
+    formError.hidden = true;
+
+    var entry = {
+      name: name, phone: phone, email: email,
+      interest: interestInput.value,
+      interestLabel: interestInput.getAttribute('data-label'),
+      message: message,
+      date: new Date().toISOString()
+    };
+
+    saveSubmission(entry);
+    form.classList.add('hidden'); 
+    formSuccess.classList.remove('hidden');
+  });
+
+  async function saveSubmission(entry){
+    try{
+      var key = 'interest:' + Date.now();
+      await window.storage.set(key, JSON.stringify(entry), true);
+    }catch(err){
+      console.error('Erreur de stockage (démo) :', err);
+    }
+  }
+
+  async function loadSubmissions(){
+    submissionsList.innerHTML = '<p class="text-sm text-slate-500 italic">Chargement…</p>';
+    try{
+      var listResult = await window.storage.list('interest:', true);
+      var keys = (listResult && listResult.keys) ? listResult.keys : [];
+      if(keys.length === 0){
+        submissionsList.innerHTML = '<p class="text-sm text-slate-500">Aucune demande pour l\'instant.</p>';
+        return;
+      }
+      var entries = [];
+      for(var i = 0; i < keys.length; i++){
+        try{
+          var res = await window.storage.get(keys[i], true);
+          if(res && res.value){ entries.push(JSON.parse(res.value)); }
+        }catch(e){  }
+      }
+      entries.sort(function(a,b){ return new Date(b.date) - new Date(a.date); });
+      if(entries.length === 0){
+        submissionsList.innerHTML = '<p class="text-sm text-slate-500">Aucune demande pour l\'instant.</p>';
+        return;
+      }
+      submissionsList.innerHTML = entries.map(function(en){
+        var d = new Date(en.date);
+        var dateStr = isNaN(d) ? '' : d.toLocaleDateString('fr-FR', {day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'});
+        return '<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 bg-white rounded border border-slate-200">' +
+               '<div><strong class="text-slate-800 text-sm block">' + escapeHtml(en.name) + '</strong>' +
+               '<span class="text-xs text-slate-500">' + dateStr + '</span></div>' +
+               '<span class="inline-block px-2 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded">' + escapeHtml(en.interestLabel || en.interest) + '</span>' +
+               '</div>';
+      }).join('');
+    }catch(err){
+      submissionsList.innerHTML = '<p class="text-sm text-red-500">Impossible de charger les demandes pour le moment.</p>';
+    }
+  }
+
+  toggleBtn.addEventListener('click', function(){
+    var willOpen = submissionsPanel.classList.contains('hidden');
+    submissionsPanel.classList.toggle('hidden');
+    toggleBtn.setAttribute('aria-expanded', String(willOpen));
+    toggleBtn.textContent = willOpen ? 'Masquer les demandes reçues (démo)' : 'Voir les demandes reçues (démo)';
+    if(willOpen){ loadSubmissions(); }
+  });
+</script>
+</body>
+</html>
