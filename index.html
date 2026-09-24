@@ -1,107 +1,123 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-  <link rel="icon" href="logo_apres.png" type="image/png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>THIAM &amp; FILS — Centre artisanal bois, métal &amp; aluminium à Kaolack</title>
-<meta name="description" content="THIAM &amp; FILS prépare un centre de production et de formation (bois, métal, aluminium) à Kahone, près de Kaolack, porté par l'artisan Abdoulaye Thiam. Découvrez le projet et manifestez votre intérêt.">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@500;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="2.jpeg" type="image/jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THIAM &amp; FILS — Centre artisanal bois, métal &amp; aluminium à Kaolack</title>
+  <meta name="description" content="THIAM &amp; FILS prépare un centre de production et de formation (bois, métal, aluminium) à Kahone, près de Kaolack, porté par l'artisan Abdoulaye Thiam. Découvrez le projet et manifestez votre intérêt.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@500;700;800;900&amp;display=swap" rel="stylesheet">
 
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-          display: ['Montserrat', 'sans-serif'],
-        },
-        colors: {
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
           slate: {
-            850: '#152033',
-            900: '#0F172A',
+            50: '#f8f9fc',
+            100: '#f1f4f9',
+            200: '#e2e8f0',
+            300: '#cbd5e1',
+            400: '#94a3b8',
+            500: '#64748b',
+            600: '#475569',
+            700: '#334155',
+            800: '#002b5e',
+            850: '#001a38',
+            900: '#002147'
           },
           orange: {
-            500: '#f97316',
-            600: '#ea580c',
-            700: '#c2410c',
+            50: '#fdfaef',
+            100: '#fbf3d7',
+            200: '#f5e2a9',
+            300: '#efcd75',
+            400: '#eab248',
+            500: '#c69137',
+            600: '#b07328',
+            700: '#8f5b1e',
+            800: '#6b4213',
+            900: '#52310c'
           }
         },
         animation: {
-          'marquee': 'marquee 30s linear infinite',
-        },
-        keyframes: {
-          marquee: {
-            '0%': { transform: 'translateX(0%)' },
-            '100%': { transform: 'translateX(-50%)' },
+            'marquee': 'marquee 30s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
           }
         }
       }
     }
-  }
-</script>
+  </script>
 
-<style>
-  /* Scroll Reveal Animations */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-  }
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-delay-1 { transition-delay: 100ms; }
-  .reveal-delay-2 { transition-delay: 200ms; }
-  .reveal-delay-3 { transition-delay: 300ms; }
+  <style>
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+    .reveal-delay-3 { transition-delay: 300ms; }
 
-  /* Glassmorphism Header */
-  .glass-header {
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
+    /* Glassmorphism Header */
+    .glass-header {
+      background: rgba(8, 32, 70, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-  /* Custom subtle grid background for Hero */
-  .bg-grid-pattern {
-    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
-  }
+    /* Custom subtle grid background for Hero */
+    .bg-grid-pattern {
+      background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
 
-  /* Form Focus & Input styling */
-  .input-field {
-    @apply w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-sans focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow duration-200;
-  }
-  
-  /* Hide scrollbar for the scrolling container */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+    /* Form Focus & Input styling */
+    .input-field {
+      @apply w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-800 font-sans focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow duration-200;
+    }
+    
+    /* Hide scrollbar for the scrolling container */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
-  /* Règle CSS claire pour que les boutons radios "réagissent" au clic */
-  .radio-card:has(input:checked) {
-    border-color: #ea580c !important; /* orange-600 */
-    background-color: #fff7ed !important; /* orange-50 */
-    box-shadow: 0 0 0 1px #ea580c;
-  }
-</style>
+    /* Règle CSS claire pour que les boutons radios "réagissent" au clic */
+    .radio-card:has(input:checked) {
+      border-color: #c59b27 !important; /* gold-600 */
+      background-color: #fdfaef !important; /* gold-50 */
+      box-shadow: 0 0 0 1px #c59b27;
+    }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
 
 <header class="fixed top-0 w-full z-50 glass-header transition-all duration-300" id="header">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <a href="#top" class="flex items-center gap-3 text-white no-underline group">
-      <img src="logo_apres.png" alt="Logo THIAM &amp; FILS" class="h-10 w-auto" />
+      <img src="2.jpeg" alt="Logo THIAM &amp; FILS" class="h-10 w-auto rounded-full border-2 border-orange-500/50" />
       <span class="font-display font-bold text-xl tracking-wide">THIAM &amp; FILS</span>
     </a>
     
@@ -134,6 +150,9 @@
 
   <!-- HERO -->
   <section class="relative bg-slate-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <!-- Filigrane logo corrigé : contenu, non répété, centré, avec masque dégradé et fusion -->
+    <div class="absolute inset-0 bg-[url('2.jpeg')] bg-contain bg-center bg-no-repeat opacity-15 mix-blend-luminosity" style="-webkit-mask-image: radial-gradient(circle at center, black 35%, transparent 65%); mask-image: radial-gradient(circle at center, black 35%, transparent 65%);"></div>
+    
     <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
     <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-orange-600/20 blur-3xl"></div>
     <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-96 h-96 rounded-full bg-blue-600/20 blur-3xl"></div>
@@ -205,15 +224,15 @@
       <!-- Galerie images -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal">
         <figure class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 m-0">
-          <img src="ex-atelier-bois.jpg" alt="Travail du bois en atelier" class="w-full h-56 object-cover">
+          <img src="3.jpeg" alt="Travail du bois en atelier" class="w-full h-56 object-cover">
           <figcaption class="px-5 py-4 text-sm font-medium text-slate-700">Le travail du bois en atelier</figcaption>
         </figure>
         <figure class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 m-0">
-          <img src="ex_atelier_fer.jpeg" alt="Soudure métallique en atelier" class="w-full h-56 object-cover">
+          <img src="5.jpeg" alt="Soudure métallique en atelier" class="w-full h-56 object-cover">
           <figcaption class="px-5 py-4 text-sm font-medium text-slate-700">La soudure métallique</figcaption>
         </figure>
         <figure class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 m-0">
-          <img src="formation.jpg" alt="Jeunes en formation dans un atelier" class="w-full h-56 object-cover">
+          <img src="6.jpeg" alt="Jeunes en formation dans un atelier" class="w-full h-56 object-cover">
           <figcaption class="px-5 py-4 text-sm font-medium text-slate-700">Des jeunes en formation</figcaption>
         </figure>
       </div>
